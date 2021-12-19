@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: helloworldservice
+   labels:
+    run: helloworld  
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 3434
+  selector:
+    run: helloworld
+  sessionAffinity: None
+  type: LoadBalancer
