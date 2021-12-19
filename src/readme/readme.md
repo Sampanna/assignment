@@ -87,7 +87,16 @@ Once inside 'assignment' directory run 'run.sh' command as highlighted below
 sh run.sh
 
 ```
+If you want to send a webrequest again, run below commands
 
+```
+## Get the IP for the service created
+CLUSTER_IP=$(kubectl get svc helloworldservice -ojsonpath='{.spec.clusterIP}')
+
+## Curl the service endpoint
+curl http://$CLUSTER_IP:8080
+
+```
 ---
 **NOTE**
 
