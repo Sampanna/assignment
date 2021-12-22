@@ -1,6 +1,9 @@
 ##git clone https://github.com/Sampanna/assignment.git	
 ## cd assignment
 
+## Start the docker service
+sudo service docker start
+
 ## Build docker image
 docker build -t hello_world ./src/app
 

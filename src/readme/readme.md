@@ -24,9 +24,17 @@ This solution uses :
 ### Assumptions
 
 1. Mini Kube is already set up and started. If not, one can use https://kubernetes.io/docs/tutorials/hello-minikube/ launching the terminal from the page
-1. Git is enabled; if not one can use the source code attached.
-1. Use Python image of your choice.
-1. Use web server framework of your choice.
+2. Docker is installed, the deamon is up and running. 
+3. Git is enabled; if not one can use the source code attached.
+4. Use Python image of your choice.
+5. Use web server framework of your choice.
+
+---
+**NOTE**
+
+Installation of any of the above components is out of scope.
+---
+
 
 ## Solution
 
@@ -63,6 +71,13 @@ Wait till you see the message 'Kubernetes started'
 
 ![Kubernetes Started](./images/kubernetes-started.PNG)
 
+Ensure docker daemon service is up and running by running below command. 
+
+```
+sudo service docker start
+
+```
+
 Run command 
 
 ```
@@ -87,6 +102,28 @@ Once inside 'assignment' directory run 'run.sh' command as highlighted below
 sh run.sh
 
 ```
+  
+Series of commands in run.sh file will take a bit to get all the components ready.   
+
+---
+**NOTE**  
+
+The image built using docker is available locally hence the 'imagePullPolicy' is set to Never in the rs.yaml file.
+----
+
+
+![Run command output 1](./images/run-command-output1.PNG)
+
+Wait for terminal to return till you see 'Hello World!' message (below)
+
+![Run command output 2](./images/run-command-output2.PNG)
+
+---
+**NOTE**  
+
+*run.sh* file contains a list of commands to create docker image, create replicaset and service required for the app to run. Once all the required components are in place, it then sends a http request using curl to get 'Hello World!' displayed on the console. One can choose to run these commands one after the other in the same sequence if they wish to.
+---  
+
 If you want to send a webrequest again, run below commands
 
 ```
@@ -97,8 +134,18 @@ CLUSTER_IP=$(kubectl get svc helloworldservice -ojsonpath='{.spec.clusterIP}')
 curl http://$CLUSTER_IP:8080
 
 ```
----
-**NOTE**
 
-*run.sh* file contains a list of commands to create docker image, create replicaset and service required for the app to run. Once all the required components are in place, it then sends a http request using curl to get 'Hello World!' displayed on the console
+
 ---
+**MISC**  
+
+### How to find if docker daemon is running.
+
+Run below command on your terminal to get the process id for dockerd
+
+```
+pid=$(cat /var/run/docker.pid)
+
+top -p $pid
+
+```
