@@ -23,7 +23,7 @@ This solution uses :
   
 ### Assumptions
 
-1. Mini Kube is already set up and started. If not, one can use https://kubernetes.io/docs/tutorials/hello-minikube/ launching the terminal from the page
+1. MiniKube is already set up and started; min version 1.18.0. If not, one can use https://kubernetes.io/docs/tutorials/hello-minikube/ launching the terminal from the page
 1. kubectl is installed; min version 1.20.4
 1. Docker is installed, the deamon is up and running. 
 1. Git is enabled; if not one can use the source code attached.
@@ -86,7 +86,7 @@ Run command
 git clone https://github.com/Sampanna/assignment.git	
 
 ```
-This will pull all the required files from GitHub. If you are not cloning the repo from GitHub, please use the source files provided and ensure the source code is made available within the environment as highighted in the directory structure(above)
+This will pull all the required files from GitHub. If you are not cloning the repo from GitHub, please use the source files provided and ensure the source code is made available within the environment as highighted in the directory structure(above). 
  
 
 ## How to run the app
