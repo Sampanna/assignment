@@ -24,10 +24,11 @@ This solution uses :
 ### Assumptions
 
 1. Mini Kube is already set up and started. If not, one can use https://kubernetes.io/docs/tutorials/hello-minikube/ launching the terminal from the page
-2. Docker is installed, the deamon is up and running. 
-3. Git is enabled; if not one can use the source code attached.
-4. Use Python image of your choice.
-5. Use web server framework of your choice.
+1. kubectl is installed; min version 1.20.4
+1. Docker is installed, the deamon is up and running. 
+1. Git is enabled; if not one can use the source code attached.
+1. Use Python image of your choice.
+1. Use web server framework of your choice.
 
 ---
 **NOTE**
@@ -47,8 +48,8 @@ assignment
 |    |    |--app.py     # application
 |    |    |--Dockerfile # Docker file
 |    |--k8s 
-|    |   |--rs.yaml     # replicaset
-|    |   |--svc.yaml    # service
+|    |   |--deployment.yaml # deployment to create a replicaset
+|    |   |--svc.yaml        # service
 |    |--readme
 |    |   |readme.md
 |    |   |--images
@@ -108,7 +109,7 @@ Series of commands in run.sh file will take a bit to get all the components read
 ---
 **NOTE**  
 
-The image built using docker is available locally hence the 'imagePullPolicy' is set to Never in the rs.yaml file.
+The image built using docker is available locally hence the 'imagePullPolicy' is set to Never in the deployment.yaml file.
 ----
 
 
