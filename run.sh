@@ -2,7 +2,7 @@
 ## cd assignment
 
 ## Start the docker service
-sudo service docker start
+#sudo service docker start
 
 ## Build docker image
 docker build -t hello_world ./src/app
@@ -21,4 +21,7 @@ CLUSTER_IP=$(kubectl get svc helloworldservice -ojsonpath='{.spec.clusterIP}')
 
 ## Curl the service endpoint
 curl http://$CLUSTER_IP:8080
+
+
+curl http://helloworldservice:8080
 

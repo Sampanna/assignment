@@ -1,6 +1,6 @@
 ---
 category: Guides
-author: Sam Mohite
+author: SM
 ---
 # Assignment
 
@@ -20,13 +20,16 @@ This solution uses :
 1. Git 
 1. Online MiniKube terminal 
 1. Shell script
+1. Platform Linux (OS - Ubuntu)
   
 ### Assumptions
 
-1. MiniKube is already set up and started; min version 1.18.0. If not, one can use https://kubernetes.io/docs/tutorials/hello-minikube/ launching the terminal from the page
-1. kubectl is installed; min version 1.20.4
+1. Use https://kubernetes.io/docs/tutorials/hello-minikube/#create-a-minikube-cluster online terminal
+1. MiniKube is already set up and started
+1. Kubernetes cluster started.
+1. kubectl is installed; min version 1.20.2.
 1. Docker is installed, the deamon is up and running. 
-1. Git is enabled; if not one can use the source code attached.
+1. Git is enabled.
 1. Use Python image of your choice.
 1. Use web server framework of your choice.
 
@@ -34,9 +37,18 @@ This solution uses :
 **NOTE**
 
 Installation of any of the above components is out of scope.
+
+At the time the code was written, below were the versions
+
+| Content       | Version             | 
+| ------------- |:--------------------| 
+| minikube      | v1.18.0             | 
+| OS release    | Ubuntu 18.04.5 LTS  | 
+| Kubernetes    | v1.20.2             |   
+| Docker        | 19.03.13            |    
+
+
 ---
-
-
 ## Solution
 
 Directory structure
@@ -64,7 +76,7 @@ assignment
 
 This article shows how to set up the app using online terminal for MiniKube
 
-1. Go to https://kubernetes.io/docs/tutorials/hello-minikube/ and launch Mini Kube terminal
+1. Go to https://kubernetes.io/docs/tutorials/hello-minikube/#create-a-minikube-cluster and launch MiniKube terminal
    
 ![Launch Terminal](./images/launchterminal.PNG)
 
@@ -73,6 +85,15 @@ Wait till you see the message 'Kubernetes started'
 ![Kubernetes Started](./images/kubernetes-started.PNG)
 
 Ensure docker daemon service is up and running by running below command. 
+
+```
+sudo service docker status
+
+```
+![Docker running](./images/docker-running.PNG)
+
+
+If docker service is not running, run below command to start the service
 
 ```
 sudo service docker start
@@ -86,8 +107,7 @@ Run command
 git clone https://github.com/Sampanna/assignment.git	
 
 ```
-This will pull all the required files from GitHub. If you are not cloning the repo from GitHub, please use the source files provided and ensure the source code is made available within the environment as highighted in the directory structure(above). 
- 
+This will pull all the required files from GitHub.  
 
 ## How to run the app
 
