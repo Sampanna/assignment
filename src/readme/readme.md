@@ -24,14 +24,15 @@ This solution uses :
   
 ### Assumptions
 
-1. Use https://kubernetes.io/docs/tutorials/hello-minikube/#create-a-minikube-cluster online terminal
-1. MiniKube is already set up and started
+1. Internet is available and one can reach github endpoints to clone the code.
+1. One can use https://kubernetes.io/docs/tutorials/hello-minikube/#create-a-minikube-cluster online terminal.
+1. MiniKube is already set up and started.
 1. Kubernetes cluster started.
 1. kubectl is installed; min version 1.20.2.
 1. Docker is installed, the deamon is up and running. 
-1. Git is enabled.
-1. Use Python image of your choice.
-1. Use web server framework of your choice.
+1. Git is intalled and enabled.
+1. Once can use Python image of their choice.
+1. One can use web server framework of their choice.
 
 ---
 **NOTE**
@@ -57,8 +58,8 @@ Directory structure
 assignment
 |--src
 |    |--app
-|    |    |--app.py     # application
-|    |    |--Dockerfile # Docker file
+|    |    |--app.py         # application
+|    |    |--Dockerfile     # Docker file
 |    |--k8s 
 |    |   |--deployment.yaml # deployment to create a replicaset
 |    |   |--svc.yaml        # service
@@ -76,13 +77,23 @@ assignment
 
 This article shows how to set up the app using online terminal for MiniKube
 
-1. Go to https://kubernetes.io/docs/tutorials/hello-minikube/#create-a-minikube-cluster and launch MiniKube terminal
+1. Go to https://kubernetes.io/docs/tutorials/hello-minikube/#create-a-minikube-cluster and launch MiniKube terminal (refer screenshot below)
    
 ![Launch Terminal](./images/launchterminal.PNG)
 
-Wait till you see the message 'Kubernetes started'
+This opens a small pane towards the bottom of the page. Please wait till you see the message 'Kubernetes started' as highligted below.
 
 ![Kubernetes Started](./images/kubernetes-started.PNG)
+
+To view terminal in fullscreen, please click the 'fullscreen' (and not the 'x' to close the terminal) icon on the top right corner of the terminal as highlighted below
+
+![Expand terminal](./images/expand-terminal.PNG)
+
+Expanded termnial in full screen looks like below
+
+![Expanded terminal](./images/terminal-expanded.PNG)
+
+Proceed by following rest of steps by running commands in the terminal
 
 Ensure docker daemon service is up and running by running below command. 
 
