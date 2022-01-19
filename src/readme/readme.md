@@ -83,7 +83,7 @@ This article shows how to set up the app using online terminal for MiniKube
 
 Wait till it opens the terminal
 
-![Launching Terminal](./images/launching-terminal.PNG) 
+![Launching Terminal](./images/terminal-launching.PNG) 
 
 This opens a small pane towards the bottom of the page. Please wait till you see the message 'Kubernetes started' as highligted below.
 
