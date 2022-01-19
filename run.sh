@@ -23,5 +23,3 @@ CLUSTER_IP=$(kubectl get svc helloworldservice -ojsonpath='{.spec.clusterIP}')
 curl http://$CLUSTER_IP:8080
 
 
-curl http://helloworldservice:8080
-

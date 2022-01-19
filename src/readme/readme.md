@@ -31,7 +31,7 @@ This solution uses :
 1. kubectl is installed; min version 1.20.2.
 1. Docker is installed, the deamon is up and running. 
 1. Git is intalled and enabled.
-1. Once can use Python image of their choice.
+1. One can use Python image of their choice.
 1. One can use web server framework of their choice.
 
 ---
@@ -81,6 +81,10 @@ This article shows how to set up the app using online terminal for MiniKube
    
 ![Launch Terminal](./images/launchterminal.PNG)
 
+Wait till it opens the terminal
+
+![Launching Terminal](./images/launching-terminal.PNG) 
+
 This opens a small pane towards the bottom of the page. Please wait till you see the message 'Kubernetes started' as highligted below.
 
 ![Kubernetes Started](./images/kubernetes-started.PNG)
@@ -120,6 +124,9 @@ git clone https://github.com/Sampanna/assignment.git
 ```
 This will pull all the required files from GitHub.  
 
+![Git Clone](./images/clone.PNG)
+
+
 ## How to run the app
 
 Once the code is available, navigate to 'assignment' directory. 
@@ -135,14 +142,19 @@ sh run.sh
 
 ```
   
-Series of commands in run.sh file will take a bit to get all the components ready.   
+Series of commands in run.sh file will take a bit to get all the components ready.  Please ignore warnings related to 'pip version'
 
----
 **NOTE**  
 
-The image built using docker is available locally hence the 'imagePullPolicy' is set to Never in the deployment.yaml file.
-----
+Note1:    
 
+*run.sh* file contains a list of commands to create docker image, create replicaset and service required for the app to run. Once all the required components are in place, it then sends a http request using curl to get 'Hello World!' displayed on the console. One can choose to run these commands one after the other in the same sequence if they wish to.
+ 
+Note2:    
+
+The image built using docker is available locally hence the 'imagePullPolicy' is set to Never in the deployment.yaml file.
+
+----
 
 ![Run command output 1](./images/run-command-output1.PNG)
 
@@ -151,10 +163,7 @@ Wait for terminal to return till you see 'Hello World!' message (below)
 ![Run command output 2](./images/run-command-output2.PNG)
 
 ---
-**NOTE**  
 
-*run.sh* file contains a list of commands to create docker image, create replicaset and service required for the app to run. Once all the required components are in place, it then sends a http request using curl to get 'Hello World!' displayed on the console. One can choose to run these commands one after the other in the same sequence if they wish to.
----  
 
 
 ## Output from run.sh
